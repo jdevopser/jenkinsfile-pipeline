@@ -1,11 +1,11 @@
 pipeline {
-    agent { label 'master' }
+    agent any
     stages {
-        stage('build') {
+        stage('run') {
             steps {
-                echo "This is build step"
-                sh 'echo using shell within Jenkinsfile'
-                echo 'not using shell in the Jenkinsfile'
+                echo 'This is run step'
+                sh 'python --version'
+                sh 'python pipeline.py'
             }
         }
     }
